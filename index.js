@@ -3,18 +3,16 @@ var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var particles = [];
-var num_particles = 100;//Change that to your liking
+var num_particles = 1000;//Change that to your liking
 
 //Helper function to get a random color - but not too dark
-
-/*function GetRandomColor() {
+function GetRandomColor() {
     var r = 0, g = 0, b = 0;
     while (r < 100 && g < 100 && b < 100)
-    */
     {
-        r = Math.floor(256);
-        g = Math.floor(0);
-        b = Math.floor(0);
+        r = Math.floor(Math.random() * 256);
+        g = Math.floor(Math.random() * 256);
+        b = Math.floor(Math.random() * 256);
     }
 
     return "rgb(" + r + "," + g + ","  + b + ")";
@@ -55,4 +53,3 @@ function loop() {
 for (var i = 0; i < num_particles; i++)
     particles.push(new Particle());
 loop();
-//hi whoever is reading this i want to know that you enjoyed my particle demo, im not currently done all this is nothing but a test, so hope you enjoy! past this this is just a placeholder in order to fill up more space so it looks like the website actually has effort in it when in reality it doent lol bjkf bjskdbfhsdvchsvchjxvhjdsxnvb hjdxnbv hjxncv chjdsnvxchjzdxvbc hjzxdvc hjxvbc hjdbfcv hjxb cvhjxchjxcbv uhjdfncb vhjcxv hjxcvchjxnbv cxhjb cxjhmn bxchjc bhjxcm bxhj jxcn bxhj bxhjn xhj hjx hjnx hx hj
