@@ -1,10 +1,6 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-// fill the entire canvas with black before drawing the circles
-ctx.fillStyle='white';
-ctx.fillRect(0,0,canvas.width,canvas.height);
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var particles = [];
