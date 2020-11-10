@@ -53,3 +53,4 @@ function loop() {
 for (var i = 0; i < num_particles; i++)
     particles.push(new Particle());
 loop();
+//hi whoever is reading this i want to know that you enjoyed my particle demo, im not currently done all this is nothing but a test, so hope you enjoy! past this this is just a placeholder in order to fill up more space so it looks like the website actually has effort in it when in reality it doent lol bjkf bjskdbfhsdvchsvchjxvhjdsxnvb hjdxnbv hjxncv chjdsnvxchjzdxvbc hjzxdvc hjxvbc hjdbfcv hjxb cvhjxchjxcbv uhjdfncb vhjcxv hjxcvchjxnbv cxhjb cxjhmn bxchjc bhjxcm bxhj jxcn bxhj bxhjn xhj hjx hjnx hx hj
