@@ -3,16 +3,16 @@ var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var particles = [];
-var num_particles = 1000000;//Change that to your liking
+var num_particles = 1;//Change that to your liking
 
 //Helper function to get a random color - but not too dark
 function GetRandomColor() {
     var r = 0, g = 0, b = 0;
     while (r < 100 && g < 100 && b < 100)
     {
-        r = Math.floor(Math.random() * 256);
-        g = Math.floor(Math.random() * 256);
-        b = Math.floor(Math.random() * 256);
+        r = Math.floor(256);
+        g = Math.floor(256);
+        b = Math.floor(256);
     }
 
     return "rgb(" + r + "," + g + ","  + b + ")";
