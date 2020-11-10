@@ -28,7 +28,7 @@ var Particle = function () {
 //Ading two methods
 Particle.prototype.Draw = function (ctx) {
     ctx.fillStyle = this.Color;
-    ctx.fillRect(this.x, this.y, 40, 40);
+    ctx.fillRect(this.x, this.y, 20, 20);
 }
 Particle.prototype.Update = function () {
     this.x += this.vx;
