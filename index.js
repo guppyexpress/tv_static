@@ -10,9 +10,9 @@ function GetRandomColor() {
     var r = 0, g = 0, b = 0;
     while (r > 100 && g > 100 && b > 100)
     {
-        r = Math.floor(256);
-        g = Math.floor(256);
-        b = Math.floor(256);
+        r = Math.floor(0);
+        g = Math.floor(0);
+        b = Math.floor(0);
     }
 
     return "rgb(" + r + "," + g + ","  + b + ")";
@@ -28,7 +28,7 @@ var Particle = function () {
 //Ading two methods
 Particle.prototype.Draw = function (ctx) {
     ctx.fillStyle = this.Color;
-    ctx.fillRect(this.x, this.y, 2, 2);
+    ctx.fillRect(this.x, this.y, 10, 10);
 }
 Particle.prototype.Update = function () {
     this.x += this.vx;
