@@ -12,7 +12,7 @@ var num_particles = 100;//Change that to your liking
     while (r < 100 && g < 100 && b < 100)
     */
     {
-        r = Math.floor(0);
+        r = Math.floor(256);
         g = Math.floor(0);
         b = Math.floor(0);
     }
