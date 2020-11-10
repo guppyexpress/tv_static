@@ -8,7 +8,7 @@ ctx.fillRect(0,0,canvas.width,canvas.height);
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var particles = [];
-var num_particles = 100000;//Change that to your liking
+var num_particles = 10000;//Change that to your liking
 
 //Helper function to get a random color - but not too dark
 function GetRandomColor() {
