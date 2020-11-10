@@ -1,87 +1,55 @@
-import Stats from "stats.js";
-import Proton from "proton-engine";
-import RAFManager from "raf-manager";
-import "./styles.css";
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var particles = [];
+var num_particles = 1000;//Change that to your liking
 
-let stats;
-let canvas;
-let context;
-let proton;
-let renderer;
-let emitter;
+//Helper function to get a random color - but not too dark
+function GetRandomColor() {
+    var r = 0, g = 0, b = 0;
+    while (r < 100 && g < 100 && b < 100)
+    {
+        r = Math.floor(Math.random() * 256);
+        g = Math.floor(Math.random() * 256);
+        b = Math.floor(Math.random() * 256);
+    }
 
-main();
-
-function main() {
-  initCanvas();
-  initStats();
-  createProton();
-  render();
+    return "rgb(" + r + "," + g + ","  + b + ")";
 }
-
-function initCanvas() {
-  canvas = document.getElementById("canvas");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  context = canvas.getContext("2d");
-
-  window.onresize = function(e) {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    emitter.p.x = canvas.width / 2;
-    emitter.p.y = canvas.height / 2;
-  };
+//Particle object with random starting position, velocity and color
+var Particle = function () {
+    this.x = canvas.width * Math.random();
+    this.y = canvas.height * Math.random();
+    this.vx = 4 * Math.random() - 2;
+    this.vy = 4 * Math.random() - 2;
+    this.Color = GetRandomColor();
 }
-
-function initStats() {
-  stats = new Stats();
-  stats.setMode(2);
-  stats.domElement.style.position = "absolute";
-  stats.domElement.style.left = "0px";
-  stats.domElement.style.top = "0px";
-  document.body.appendChild(stats.domElement);
+//Ading two methods
+Particle.prototype.Draw = function (ctx) {
+    ctx.fillStyle = this.Color;
+    ctx.fillRect(this.x, this.y, 2, 2);
 }
-
-function createProton() {
-  proton = new Proton();
-  emitter = new Proton.Emitter();
-  emitter.rate = new Proton.Rate(
-    new Proton.Span(10, 20),
-    new Proton.Span(0.1, 0.25)
-  );
-  emitter.addInitialize(new Proton.Mass(1));
-  emitter.addInitialize(new Proton.Radius(1, 12));
-  emitter.addInitialize(new Proton.Life(2, 4));
-  emitter.addInitialize(
-    new Proton.Velocity(
-      new Proton.Span(2, 4),
-      new Proton.Span(-30, 30),
-      "polar"
-    )
-  );
-  emitter.addBehaviour(new Proton.RandomDrift(30, 30, 0.05));
-  emitter.addBehaviour(
-    new Proton.Color("ff0000", "random", Infinity, Proton.easeOutQuart)
-  );
-  emitter.addBehaviour(new Proton.Scale(1, 0.7));
-  emitter.p.x = canvas.width / 2;
-  emitter.p.y = canvas.height / 2;
-  emitter.emit();
-
-  proton.addEmitter(emitter);
-  renderer = new Proton.CanvasRenderer(canvas);
-  renderer.onProtonUpdate = () => {
-    context.fillStyle = "rgba(0, 0, 0, 0.1)";
-    context.fillRect(0, 0, canvas.width, canvas.height);
-  };
-  proton.addRenderer(renderer);
+Particle.prototype.Update = function () {
+    this.x += this.vx;
+    this.y += this.vy;
+ 
+    if (this.x<0 || this.x > canvas.width)
+        this.vx = -this.vx;
+ 
+    if (this.y < 0 || this.y > canvas.height)
+        this.vy = -this.vy;
 }
+function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-function render() {
-  RAFManager.add(() => {
-    stats.begin();
-    emitter.rotation += 1.5;
-    proton.update();
-    stats.end();
-  });
+    for (var i = 0; i < num_particles; i++) {
+        particles[i].Update();
+        particles[i].Draw(ctx);
+    }
+    requestAnimationFrame(loop);
 }
+//Create particles
+for (var i = 0; i < num_particles; i++)
+    particles.push(new Particle());
+loop();
