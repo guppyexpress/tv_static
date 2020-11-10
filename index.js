@@ -6,9 +6,11 @@ var particles = [];
 var num_particles = 100;//Change that to your liking
 
 //Helper function to get a random color - but not too dark
-function GetRandomColor() {
+
+/*function GetRandomColor() {
     var r = 0, g = 0, b = 0;
     while (r < 100 && g < 100 && b < 100)
+    */
     {
         r = Math.floor(0);
         g = Math.floor(0);
