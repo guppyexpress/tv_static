@@ -21,14 +21,14 @@ function GetRandomColor() {
 var Particle = function () {
     this.x = canvas.width * Math.random();
     this.y = canvas.height * Math.random();
-    this.vx = 20 * Math.random() - 2;
-    this.vy = 20 * Math.random() - 2;
+    this.vx = 20 * Math.random() - 10;
+    this.vy = 20 * Math.random() - 10;
     this.Color = GetRandomColor();
 }
 //Ading two methods
 Particle.prototype.Draw = function (ctx) {
     ctx.fillStyle = this.Color;
-    ctx.fillRect(this.x, this.y, 10, 10);
+    ctx.fillRect(this.x, this.y, 40, 40);
 }
 Particle.prototype.Update = function () {
     this.x += this.vx;
