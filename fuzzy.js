@@ -21,8 +21,8 @@ function GetRandomColor() {
 var Particle = function () {
     this.x = canvas.width * Math.random();
     this.y = canvas.height * Math.random();
-    this.vx = 1000 * Math.random() + 1000;
-    this.vy = 1000 * Math.random() + 1000;
+    this.vx = 800 * Math.random() + 800;
+    this.vy = 800 * Math.random() + 800;
     this.Color = GetRandomColor();
 }
 //Ading two methods
