@@ -29,7 +29,7 @@ var Particle = function () {
 Particle.prototype.Draw = function (ctx) {
     ctx.fillStyle = this.Color;
     //change fuzzy boi size
-    ctx.fillRect(this.x, this.y, 1, 1);
+    ctx.fillRect(this.x, this.y, 4, 4);
 }
 //                                                                                                                                                                                                                                  OwO wats this? an eastew egg? i hope you enjoyed my website its, made fwom puwe bowdom and has no actuaw puwpose, it is just that feewing u get in uw weg when u sit down fow too wong, ow the taste of spawkwing watew, ow awso micwowave noises, haha weww enjoy :D
 Particle.prototype.Update = function () {
