@@ -3,7 +3,7 @@ var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var particles = [];
-var num_particles = 40000;//MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MICROWAVE TIME
+var num_particles = 50000;//MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MICROWAVE TIME
 
 //Helps prevent colors from being too high or too low
 function GetRandomColor() {
@@ -21,8 +21,8 @@ function GetRandomColor() {
 var Particle = function () {
     this.x = canvas.width * Math.random();
     this.y = canvas.height * Math.random();
-    this.vx = 100 * Math.random() - 100;
-    this.vy = -100 * Math.random() + 100;
+    this.vx = 100 * Math.random() - 200;
+    this.vy = -100 * Math.random() + 200;
     this.Color = GetRandomColor();
 }
 //Ading two methods
@@ -31,7 +31,7 @@ Particle.prototype.Draw = function (ctx) {
     //change fuzzy boi size
     ctx.fillRect(this.x, this.y, 5, 5);
 }
-//                                                                                      OWO
+//                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          OWO
 Particle.prototype.Update = function () {
     this.x += this.vx;
     this.y += this.vy;
