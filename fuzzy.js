@@ -31,7 +31,7 @@ Particle.prototype.Draw = function (ctx) {
     //change fuzzy boi size
     ctx.fillRect(this.x, this.y, 5, 5);
 }
-//                                                                                                                                                                                                                                  OwO wats this? an eastew egg? i hope you enjoyed my website its, made fwom puwe bowdom and has no actuaw puwpose, it is just that feewing u get in uw weg when u sit down fow too wong, ow the taste of spawkwing watew, ow awso micwowave noises, haha weww enjoy :D
+//................................................................................................................................                                                                                                                                                                                                                                  OwO wats this? an eastew egg? i hope you enjoyed my website its, made fwom puwe bowdom and has no actuaw puwpose, it is just that feewing u get in uw weg when u sit down fow too wong, ow the taste of spawkwing watew, ow awso micwowave noises, haha weww enjoy :D
 Particle.prototype.Update = function () {
     this.x += this.vx;
     this.y += this.vy;
