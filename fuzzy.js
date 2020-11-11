@@ -3,9 +3,9 @@ var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var particles = [];
-var num_particles = 40000;//Change that to your liking
+var num_particles = 40000;//MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MICROWAVE TIME
 
-//Helper function to get a random color - but not too dark
+//Helps prevent colors from being too high or too low
 function GetRandomColor() {
     var r = 0, g = 0, b = 0;
     while (r > 100 && g > 100 && b > 100)
@@ -21,15 +21,17 @@ function GetRandomColor() {
 var Particle = function () {
     this.x = canvas.width * Math.random();
     this.y = canvas.height * Math.random();
-    this.vx = 70 * Math.random() - 70;
-    this.vy = 70 * Math.random() - 70;
+    this.vx = 100 * Math.random() - 100;
+    this.vy = 100 * Math.random() - 100;
     this.Color = GetRandomColor();
 }
 //Ading two methods
 Particle.prototype.Draw = function (ctx) {
     ctx.fillStyle = this.Color;
+    //change fuzzy boi size
     ctx.fillRect(this.x, this.y, 5, 5);
 }
+//                                                                                      OWO
 Particle.prototype.Update = function () {
     this.x += this.vx;
     this.y += this.vy;
