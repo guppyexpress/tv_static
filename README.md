@@ -2,7 +2,7 @@
 
 
 
-Using Multithread is simple. Include multithread.js on any page u wanna with wats below
+Using Multithread is simples. Include multithread.js on any page u wanna with wats below
 ------------------------------------------------------
 <script src="my/path/to/multithread.js"></script>
 ------------------------------------------------------
