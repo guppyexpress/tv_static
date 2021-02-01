@@ -1,6 +1,3 @@
-//multithread test
-var num_threads = 4;
-var MT = new Multithread(num_threads);
 //create canvas stuffs
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -8,7 +5,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var particles = [];
 var num_particles = 40000;//MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MICROWAVE TIME
-
+//multithread test
+var num_threads = 4;
+var MT = new Multithread(num_threads);
 //Helps prevent colors from being too high or too low
 function GetRandomColor() {
     var r = 0, g = 0, b = 0;
