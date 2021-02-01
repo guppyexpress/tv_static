@@ -1,3 +1,7 @@
+//multithread test
+var num_threads = 4;
+var MT = new Multithread(num_threads);
+//create canvas stuffs
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
@@ -55,6 +59,4 @@ function loop() {
 for (var i = 0; i < num_particles; i++)
     particles.push(new Particle());
 loop();
-//multithread test
-var num_threads = 4;
-var MT = new Multithread(num_threads);
+
