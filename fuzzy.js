@@ -4,7 +4,7 @@ var ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var particles = [];
-var num_particles = 40000;//MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MICROWAVE TIME
+var num_particles = 4000;//MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM MICROWAVE TIME
 
 //Helps prevent colors from being too high or too low
 function GetRandomColor() {
